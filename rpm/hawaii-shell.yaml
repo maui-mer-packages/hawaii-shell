@@ -3,7 +3,7 @@ Version    : 0.2.0.1.20140215.51d1271
 Release    : 1
 Group      : Applications/System
 License    : BSD
-Summary    : Hawaii shell.
+Summary    : Hawaii user interface for desktop and mobile
 Description: Provides Hawaii desktop environment shell.
 URL        : https://github.com/mauios/hawaii-shell.git
 Sources    : 
@@ -26,7 +26,6 @@ PkgConfigBR:
     - Qt5Gui
     - Qt5Quick
     - Qt5Script
-    - Qt5Xdg
     - dconf
     - systemd
     - polkit-qt-1
@@ -49,12 +48,14 @@ Requires:
     - qt5-qtdeclarative-import-window2
     - qt5-qtsvg-plugin-imageformat-svg
     - qt5-qttools-qdbus
-    - wallpapers
+    - qt5-qtquickcontrols
+    - hawaii-wallpapers
     - fluid
 
 Files:  
     - "%{_bindir}/hawaii"
     - "%{_bindir}/hawaii-shell"
+    - "%{_bindir}/hawaii-polkit-agent"
     - "%{_libdir}/hawaii/plugins/platformthemes/hawaii.so"
     - "%{_libdir}/hawaii/qml/Hawaii/Shell/"
     - "%{_libdir}/weston/hawaii-desktop.so"
@@ -68,9 +69,11 @@ Files:
 
 SubPackages:
     - Name: devel
-      Summary: Devel files for Hawaii
+      Summary: Development files for Hawaii
       Group: Development/System
-      Description: "%{summary}."
+      Description: |
+        This package contains the files necessary to develop applications |
+        that interact with Hawaii Shelll.
       Files:
          - "%{_includedir}/HF1/HawaiiShell/"
          - "%{_libdir}/cmake/HF1HawaiiShell/*.cmake"

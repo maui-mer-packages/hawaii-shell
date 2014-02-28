@@ -8,7 +8,7 @@ Name:       hawaii-shell
 # >> macros
 # << macros
 
-Summary:    Hawaii shell.
+Summary:    Hawaii user interface for desktop and mobile
 Version:    0.2.0.1.20140215.51d1271
 Release:    1
 Group:      Applications/System
@@ -20,7 +20,8 @@ Patch0:     Remove-C++11-override.patch
 Requires:   qt5-qtdeclarative-import-window2
 Requires:   qt5-qtsvg-plugin-imageformat-svg
 Requires:   qt5-qttools-qdbus
-Requires:   wallpapers
+Requires:   qt5-qtquickcontrols
+Requires:   hawaii-wallpapers
 Requires:   fluid
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -34,7 +35,6 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Script)
-BuildRequires:  pkgconfig(Qt5Xdg)
 BuildRequires:  pkgconfig(dconf)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  pkgconfig(polkit-qt-1)
@@ -55,12 +55,14 @@ BuildRequires:  greenisland-devel
 Provides Hawaii desktop environment shell.
 
 %package devel
-Summary:    Devel files for Hawaii
+Summary:    Development files for Hawaii
 Group:      Development/System
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
-%{summary}.
+This package contains the files necessary to develop applications |
+that interact with Hawaii Shelll.
+
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -73,19 +75,10 @@ Requires:   %{name} = %{version}-%{release}
 %build
 # >> build pre
 cd upstream
-%ifnarch %{ix86} x86_64
-# HACK!!! Please remove when possible.
-# cmake is accelerated but version is too old
-mkdir /tmp/bin
-cp -a /usr/bin/cmake /usr/share/cmake/Modules /usr/share/cmake/Templates /tmp/bin/
-PATH=/tmp/bin:$PATH
-/tmp/bin/cmake -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_SKIP_RPATH:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON . -DCMAKE_BUILD_TYPE=RelWithDebInfo
-%else
 # << build pre
 
 %cmake .  \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo
-%endif
 
 make %{?jobs:-j%jobs}
 
@@ -110,6 +103,7 @@ cd upstream
 %defattr(-,root,root,-)
 %{_bindir}/hawaii
 %{_bindir}/hawaii-shell
+%{_bindir}/hawaii-polkit-agent
 %{_libdir}/hawaii/plugins/platformthemes/hawaii.so
 %{_libdir}/hawaii/qml/Hawaii/Shell/
 %{_libdir}/weston/hawaii-desktop.so
