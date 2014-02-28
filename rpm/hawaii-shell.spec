@@ -16,7 +16,6 @@ License:    BSD
 URL:        https://github.com/mauios/hawaii-shell.git
 Source0:    hawaii-shell-%{version}.tar.bz2
 Source100:  hawaii-shell.yaml
-Patch0:     Remove-C++11-override.patch
 Requires:   qt5-qtdeclarative-import-window2
 Requires:   qt5-qtsvg-plugin-imageformat-svg
 Requires:   qt5-qttools-qdbus
@@ -67,9 +66,9 @@ that interact with Hawaii Shelll.
 %prep
 %setup -q -n %{name}-%{version}
 
-# Remove-C++11-override.patch
-%patch0 -p1
 # >> setup
+find upstream/src/server/ -type f -name "*.cpp" | xargs perl -p -i -e 's, override,,g'
+find upstream/src/server/ -type f -name "*.h" | xargs perl -p -i -e 's, override,,g'
 # << setup
 
 %build
