@@ -1,7 +1,8 @@
-diff -ru a/src/server/animationcurve.h b/src/server/animationcurve.h
---- a/src/server/animationcurve.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/animationcurve.h	2014-02-09 07:38:57.438348783 +0200
-@@ -68,14 +68,14 @@
+diff --git a/src/server/animationcurve.h b/src/server/animationcurve.h
+index e3438f7..f5fe123 100644
+--- a/src/server/animationcurve.h
++++ b/src/server/animationcurve.h
+@@ -68,14 +68,14 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
  
  class InQuadCurve : public AnimationCurve {
  public:
@@ -18,7 +19,7 @@ diff -ru a/src/server/animationcurve.h b/src/server/animationcurve.h
          f *= 2.f;
          if (f < 1.f) {
              return f * f/ 2.f;
-@@ -98,7 +98,7 @@
+@@ -98,7 +98,7 @@ protected:
  
  class OutBackCurve : public BackCurve {
  public:
@@ -27,7 +28,7 @@ diff -ru a/src/server/animationcurve.h b/src/server/animationcurve.h
          float s = m_overshoot;
          t -= 1.f;
          return t*t*((s+1)*t+ s) + 1;
-@@ -108,7 +108,7 @@
+@@ -108,7 +108,7 @@ public:
  
  class InOutBackCurve : public BackCurve {
  public:
@@ -36,7 +37,7 @@ diff -ru a/src/server/animationcurve.h b/src/server/animationcurve.h
          float s = m_overshoot;
          t *= 2.0;
          if (t < 1) {
-@@ -124,7 +124,7 @@
+@@ -124,7 +124,7 @@ public:
  
  class OutBounceCurve : public AnimationCurve {
  public:
@@ -45,7 +46,7 @@ diff -ru a/src/server/animationcurve.h b/src/server/animationcurve.h
          float c = 1.f;
          float a = 0.5f;
          if (t < (4/11.0)) {
-@@ -155,7 +155,7 @@
+@@ -155,7 +155,7 @@ protected:
  
  class OutElasticCurve : public ElasticCurve {
  public:
@@ -54,7 +55,7 @@ diff -ru a/src/server/animationcurve.h b/src/server/animationcurve.h
          if (t == 0.f) return 0.f;
          if (t == 1.f) return 1.f;
  
-@@ -179,7 +179,7 @@
+@@ -179,7 +179,7 @@ public:
      PulseCurve() { m_pulseNormalize = 1.f; m_pulseNormalize = 1.f / pulse(1); }
  
      // viscous fluid with a pulse for part and decay for the rest
@@ -63,10 +64,11 @@ diff -ru a/src/server/animationcurve.h b/src/server/animationcurve.h
          if (x >= 1) return 1;
          if (x <= 0) return 0;
  
-diff -ru a/src/server/effect.h b/src/server/effect.h
---- a/src/server/effect.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effect.h	2014-02-09 07:39:09.806410113 +0200
-@@ -51,7 +51,7 @@
+diff --git a/src/server/effect.h b/src/server/effect.h
+index 8fec9c8..1dba933 100644
+--- a/src/server/effect.h
++++ b/src/server/effect.h
+@@ -51,7 +51,7 @@ protected:
      {
      protected:
          Settings();
@@ -75,10 +77,11 @@ diff -ru a/src/server/effect.h b/src/server/effect.h
      };
  
  private:
-diff -ru a/src/server/effects/fademovingeffect.h b/src/server/effects/fademovingeffect.h
---- a/src/server/effects/fademovingeffect.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effects/fademovingeffect.h	2014-02-09 07:40:32.258818972 +0200
-@@ -33,8 +33,8 @@
+diff --git a/src/server/effects/fademovingeffect.h b/src/server/effects/fademovingeffect.h
+index 509abf1..61b1c58 100644
+--- a/src/server/effects/fademovingeffect.h
++++ b/src/server/effects/fademovingeffect.h
+@@ -33,8 +33,8 @@ public:
          Settings();
          ~Settings();
  
@@ -89,9 +92,10 @@ diff -ru a/src/server/effects/fademovingeffect.h b/src/server/effects/fademoving
  
      private:
          FadeMovingEffect *m_effect;
-diff -ru a/src/server/effects/griddesktops.cpp b/src/server/effects/griddesktops.cpp
---- a/src/server/effects/griddesktops.cpp	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effects/griddesktops.cpp	2014-02-09 07:40:06.666692067 +0200
+diff --git a/src/server/effects/griddesktops.cpp b/src/server/effects/griddesktops.cpp
+index 6e48702..ff72adc 100644
+--- a/src/server/effects/griddesktops.cpp
++++ b/src/server/effects/griddesktops.cpp
 @@ -26,7 +26,7 @@
  #include "binding.h"
  
@@ -101,7 +105,7 @@ diff -ru a/src/server/effects/griddesktops.cpp b/src/server/effects/griddesktops
      {
          if (moving) {
              return;
-@@ -39,7 +39,7 @@
+@@ -39,7 +39,7 @@ struct DGrab : public ShellGrab {
              weston_pointer_set_focus(pointer(), view, sx, sy);
          }
      }
@@ -110,7 +114,7 @@ diff -ru a/src/server/effects/griddesktops.cpp b/src/server/effects/griddesktops
      {
          weston_pointer_move(pointer(), x, y);
  
-@@ -79,7 +79,7 @@
+@@ -79,7 +79,7 @@ struct DGrab : public ShellGrab {
              }
          }
      }
@@ -119,10 +123,11 @@ diff -ru a/src/server/effects/griddesktops.cpp b/src/server/effects/griddesktops
      {
          if (state == WL_POINTER_BUTTON_STATE_PRESSED) {
              ShellSurface *shsurf = pointer()->focus ? Shell::getShellSurface(pointer()->focus->surface) : nullptr;
-diff -ru a/src/server/effects/griddesktops.h b/src/server/effects/griddesktops.h
---- a/src/server/effects/griddesktops.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effects/griddesktops.h	2014-02-09 07:40:20.978763037 +0200
-@@ -36,10 +36,10 @@
+diff --git a/src/server/effects/griddesktops.h b/src/server/effects/griddesktops.h
+index 4e991e9..55be529 100644
+--- a/src/server/effects/griddesktops.h
++++ b/src/server/effects/griddesktops.h
+@@ -36,10 +36,10 @@ public:
          Settings();
          ~Settings();
  
@@ -137,10 +142,11 @@ diff -ru a/src/server/effects/griddesktops.h b/src/server/effects/griddesktops.h
  
      private:
          GridDesktops *m_effect;
-diff -ru a/src/server/effects/inoutsurfaceeffect.h b/src/server/effects/inoutsurfaceeffect.h
---- a/src/server/effects/inoutsurfaceeffect.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effects/inoutsurfaceeffect.h	2014-02-09 07:39:55.574637065 +0200
-@@ -31,8 +31,8 @@
+diff --git a/src/server/effects/inoutsurfaceeffect.h b/src/server/effects/inoutsurfaceeffect.h
+index 2e04c39..b1a3194 100644
+--- a/src/server/effects/inoutsurfaceeffect.h
++++ b/src/server/effects/inoutsurfaceeffect.h
+@@ -31,8 +31,8 @@ public:
          Settings();
          ~Settings();
  
@@ -151,10 +157,11 @@ diff -ru a/src/server/effects/inoutsurfaceeffect.h b/src/server/effects/inoutsur
  
      private:
          InOutSurfaceEffect *m_effect;
-diff -ru a/src/server/effects/minimizeeffect.h b/src/server/effects/minimizeeffect.h
---- a/src/server/effects/minimizeeffect.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effects/minimizeeffect.h	2014-02-09 07:40:13.994728405 +0200
-@@ -31,8 +31,8 @@
+diff --git a/src/server/effects/minimizeeffect.h b/src/server/effects/minimizeeffect.h
+index 938afa8..a12660a 100644
+--- a/src/server/effects/minimizeeffect.h
++++ b/src/server/effects/minimizeeffect.h
+@@ -31,8 +31,8 @@ public:
          Settings();
          ~Settings();
  
@@ -165,7 +172,7 @@ diff -ru a/src/server/effects/minimizeeffect.h b/src/server/effects/minimizeeffe
  
      private:
          MinimizeEffect *m_effect;
-@@ -42,8 +42,8 @@
+@@ -42,8 +42,8 @@ public:
      ~MinimizeEffect();
  
  protected:
@@ -176,10 +183,11 @@ diff -ru a/src/server/effects/minimizeeffect.h b/src/server/effects/minimizeeffe
  
  private:
      struct Surface;
-diff -ru a/src/server/effects/scaleeffect.cpp b/src/server/effects/scaleeffect.cpp
---- a/src/server/effects/scaleeffect.cpp	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effects/scaleeffect.cpp	2014-02-09 07:40:00.538661680 +0200
-@@ -45,7 +45,7 @@
+diff --git a/src/server/effects/scaleeffect.cpp b/src/server/effects/scaleeffect.cpp
+index 024fdad..c1f27af 100644
+--- a/src/server/effects/scaleeffect.cpp
++++ b/src/server/effects/scaleeffect.cpp
+@@ -45,7 +45,7 @@ struct SurfaceTransform {
  };
  
  struct Grab : public ShellGrab {
@@ -188,7 +196,7 @@ diff -ru a/src/server/effects/scaleeffect.cpp b/src/server/effects/scaleeffect.c
      {
          Workspace *currWs = Shell::instance()->currentWorkspace();
  
-@@ -74,7 +74,7 @@
+@@ -74,7 +74,7 @@ struct Grab : public ShellGrab {
              tr->alphaAnim.run(tr->surface->output(), ALPHA_ANIM_DURATION);
          }
      }
@@ -197,10 +205,11 @@ diff -ru a/src/server/effects/scaleeffect.cpp b/src/server/effects/scaleeffect.c
      {
          if (state == WL_POINTER_BUTTON_STATE_PRESSED) {
              ShellSurface *shsurf = Shell::getShellSurface(surface->surface);
-diff -ru a/src/server/effects/scaleeffect.h b/src/server/effects/scaleeffect.h
---- a/src/server/effects/scaleeffect.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effects/scaleeffect.h	2014-02-09 07:39:50.238610605 +0200
-@@ -36,10 +36,10 @@
+diff --git a/src/server/effects/scaleeffect.h b/src/server/effects/scaleeffect.h
+index 6c74c0a..03c74e6 100644
+--- a/src/server/effects/scaleeffect.h
++++ b/src/server/effects/scaleeffect.h
+@@ -36,10 +36,10 @@ public:
          Settings();
          ~Settings();
  
@@ -215,10 +224,11 @@ diff -ru a/src/server/effects/scaleeffect.h b/src/server/effects/scaleeffect.h
  
      private:
          ScaleEffect *m_effect;
-diff -ru a/src/server/effects/zoomeffect.h b/src/server/effects/zoomeffect.h
---- a/src/server/effects/zoomeffect.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/effects/zoomeffect.h	2014-02-09 07:40:26.342789636 +0200
-@@ -28,10 +28,10 @@
+diff --git a/src/server/effects/zoomeffect.h b/src/server/effects/zoomeffect.h
+index 0c5031c..051676c 100644
+--- a/src/server/effects/zoomeffect.h
++++ b/src/server/effects/zoomeffect.h
+@@ -28,10 +28,10 @@ public:
          Settings();
          ~Settings();
  
@@ -233,10 +243,11 @@ diff -ru a/src/server/effects/zoomeffect.h b/src/server/effects/zoomeffect.h
  
      private:
          ZoomEffect *m_effect;
-diff -ru a/src/server/shellsignal.h b/src/server/shellsignal.h
---- a/src/server/shellsignal.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/shellsignal.h	2014-02-09 07:39:15.434438020 +0200
-@@ -54,7 +54,7 @@
+diff --git a/src/server/shellsignal.h b/src/server/shellsignal.h
+index 205bf9b..75c0249 100644
+--- a/src/server/shellsignal.h
++++ b/src/server/shellsignal.h
+@@ -54,7 +54,7 @@ private:
      class FunctionFunctor : public Functor {
      public:
          FunctionFunctor(const std::function<void (Args...)> &func) : m_func(func) {}
@@ -245,10 +256,11 @@ diff -ru a/src/server/shellsignal.h b/src/server/shellsignal.h
  
          std::function<void (Args...)> m_func;
      };
-diff -ru a/src/server/shellsurface.cpp b/src/server/shellsurface.cpp
---- a/src/server/shellsurface.cpp	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/shellsurface.cpp	2014-02-09 07:38:40.846266507 +0200
-@@ -482,7 +482,7 @@
+diff --git a/src/server/shellsurface.cpp b/src/server/shellsurface.cpp
+index 0783e6c..d70f845 100644
+--- a/src/server/shellsurface.cpp
++++ b/src/server/shellsurface.cpp
+@@ -482,7 +482,7 @@ void ShellSurface::centerOnOutput(struct weston_output *output)
  class MoveGrab : public ShellGrab
  {
  public:
@@ -257,7 +269,7 @@ diff -ru a/src/server/shellsurface.cpp b/src/server/shellsurface.cpp
      {
          weston_pointer_move(pointer(), x, y);
  
-@@ -496,7 +496,7 @@
+@@ -496,7 +496,7 @@ public:
          weston_view_set_position(view, dx, dy);
          weston_compositor_schedule_repaint(shsurf->m_surface->compositor);
      }
@@ -266,7 +278,7 @@ diff -ru a/src/server/shellsurface.cpp b/src/server/shellsurface.cpp
      {
          enum wl_pointer_button_state state = (wl_pointer_button_state)state_w;
  
-@@ -540,7 +540,7 @@
+@@ -540,7 +540,7 @@ void ShellSurface::dragMove(struct weston_seat *ws)
  class ResizeGrab : public ShellGrab
  {
  public:
@@ -275,7 +287,7 @@ diff -ru a/src/server/shellsurface.cpp b/src/server/shellsurface.cpp
      {
          weston_pointer_move(pointer(), x, y);
  
-@@ -570,7 +570,7 @@
+@@ -570,7 +570,7 @@ public:
  
          shsurf->m_client->send_configure(shsurf->m_surface, (int)edges, w, h);
      }
@@ -284,11 +296,12 @@ diff -ru a/src/server/shellsurface.cpp b/src/server/shellsurface.cpp
      {
          if (pointer()->button_count == 0 && state == WL_POINTER_BUTTON_STATE_RELEASED) {
              shsurf->m_runningGrab = nullptr;
-diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop-shell.cpp
---- a/src/server/wl_hawaii/desktop-shell.cpp	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/wl_hawaii/desktop-shell.cpp	2014-02-09 07:39:31.814519245 +0200
-@@ -86,7 +86,7 @@
-         dismissed = true;
+diff --git a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop-shell.cpp
+index 7ef5c99..ee210fc 100644
+--- a/src/server/wl_hawaii/desktop-shell.cpp
++++ b/src/server/wl_hawaii/desktop-shell.cpp
+@@ -83,7 +83,7 @@ public:
+         wl_resource_destroy(shsurfResource);
      }
  
 -    void focus() override
@@ -296,7 +309,7 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop
      {
          wl_fixed_t sx, sy;
          weston_view *pickedView = weston_compositor_pick_view(pointer()->seat->compositor,
-@@ -98,7 +98,7 @@
+@@ -95,7 +95,7 @@ public:
              weston_pointer_set_focus(pointer(), view, sx, sy);
      }
  
@@ -305,7 +318,7 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop
      {
          ShellGrab::motion(time, x, y);
  
-@@ -110,7 +110,7 @@
+@@ -107,7 +107,7 @@ public:
          }
      }
  
@@ -314,7 +327,7 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop
      {
          wl_resource *resource;
          wl_resource_for_each(resource, &pointer()->focus_resource_list) {
-@@ -504,7 +504,7 @@
+@@ -489,7 +489,7 @@ ShellSurface *DesktopShell::createShellSurface(weston_surface *surface, const we
  }
  
  struct BusyGrab : public ShellGrab {
@@ -323,7 +336,7 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop
      {
          wl_fixed_t sx, sy;
          weston_view *view = weston_compositor_pick_view(pointer()->seat->compositor, pointer()->x, pointer()->y, &sx, &sy);
-@@ -513,7 +513,7 @@
+@@ -498,7 +498,7 @@ struct BusyGrab : public ShellGrab {
              delete this;
          }
      }
@@ -332,7 +345,7 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop
      {
          weston_seat *seat = pointer()->seat;
  
-@@ -1567,7 +1567,7 @@
+@@ -1648,7 +1648,7 @@ public:
          return static_cast<DesktopShell *>(Shell::instance());
      }
  
@@ -341,7 +354,7 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop
      {
          std::list<Option> list;
          list.push_back(Option::binding("move_window", Binding::Type::Button));
-@@ -1579,7 +1579,7 @@
+@@ -1660,7 +1660,7 @@ public:
          return list;
      }
  
@@ -350,7 +363,7 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop
      {
          if (name == "move_window") {
              shell()->m_moveBinding->reset();
-@@ -1596,7 +1596,7 @@
+@@ -1677,7 +1677,7 @@ public:
          }
      }
  
@@ -359,16 +372,20 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.cpp b/src/server/wl_hawaii/desktop
      {
          if (name == "move_window") {
              v.bind(shell()->m_moveBinding);
-diff -ru a/src/server/wl_hawaii/desktop-shell.h b/src/server/wl_hawaii/desktop-shell.h
---- a/src/server/wl_hawaii/desktop-shell.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/wl_hawaii/desktop-shell.h	2014-02-09 07:39:37.366546776 +0200
-@@ -77,12 +77,12 @@
+diff --git a/src/server/wl_hawaii/desktop-shell.h b/src/server/wl_hawaii/desktop-shell.h
+index 68ab392..823cec8 100644
+--- a/src/server/wl_hawaii/desktop-shell.h
++++ b/src/server/wl_hawaii/desktop-shell.h
+@@ -78,7 +78,7 @@ public:
      void unlockSession();
      void resumeDesktop();
  
 -    bool isTrusted(wl_client *client, const char *interface) const override;
 +    bool isTrusted(wl_client *client, const char *interface) const;
  
+     void addPanelSurfaceToLayer(weston_view *view);
+ 
+@@ -89,7 +89,7 @@ public:
  protected:
      virtual void init();
      virtual void setGrabCursor(Cursor cursor);
@@ -377,10 +394,11 @@ diff -ru a/src/server/wl_hawaii/desktop-shell.h b/src/server/wl_hawaii/desktop-s
  
  private:
      void idle(void *);
-diff -ru a/src/server/wl_hawaii/hawaiiclientwindow.h b/src/server/wl_hawaii/hawaiiclientwindow.h
---- a/src/server/wl_hawaii/hawaiiclientwindow.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/wl_hawaii/hawaiiclientwindow.h	2014-02-09 07:39:43.094575180 +0200
-@@ -44,7 +44,7 @@
+diff --git a/src/server/wl_hawaii/hawaiiclientwindow.h b/src/server/wl_hawaii/hawaiiclientwindow.h
+index ca33c01..427ca1d 100644
+--- a/src/server/wl_hawaii/hawaiiclientwindow.h
++++ b/src/server/wl_hawaii/hawaiiclientwindow.h
+@@ -44,7 +44,7 @@ public:
      void create();
  
  protected:
@@ -389,10 +407,11 @@ diff -ru a/src/server/wl_hawaii/hawaiiclientwindow.h b/src/server/wl_hawaii/hawa
  
  private:
      ShellSurface *shsurf();
-diff -ru a/src/server/wl_hawaii/hawaiiworkspace.h b/src/server/wl_hawaii/hawaiiworkspace.h
---- a/src/server/wl_hawaii/hawaiiworkspace.h	2014-02-08 22:19:29.000000000 +0200
-+++ b/src/server/wl_hawaii/hawaiiworkspace.h	2014-02-09 07:39:20.926465254 +0200
-@@ -48,7 +48,7 @@
+diff --git a/src/server/wl_hawaii/hawaiiworkspace.h b/src/server/wl_hawaii/hawaiiworkspace.h
+index cbb8daa..308d483 100644
+--- a/src/server/wl_hawaii/hawaiiworkspace.h
++++ b/src/server/wl_hawaii/hawaiiworkspace.h
+@@ -48,7 +48,7 @@ public:
      static HawaiiWorkspace *fromResource(wl_resource *resource);
  
  protected:
