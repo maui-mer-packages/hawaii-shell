@@ -1,0 +1,77 @@
+Name       : hawaii-shell
+Version    : 0.2.0.1.20140215.51d1271
+Release    : 1
+Group      : Applications/System
+License    : BSD
+Summary    : Hawaii shell.
+Description: Provides Hawaii desktop environment shell.
+URL        : https://github.com/mauios/hawaii-shell.git
+Sources    : 
+    - shell-%{version}.tar.bz2
+Patches:
+    - Remove-C++11-override.patch
+
+Configure  : cmake 
+ConfigOptions: 
+    - -DCMAKE_BUILD_TYPE=RelWithDebInfo 
+
+PkgConfigBR:
+    - Qt5Compositor
+    - Qt5Widgets
+    - liblzma
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Network
+    - Qt5Qml
+    - Qt5Gui
+    - Qt5Quick
+    - Qt5Script
+    - Qt5Xdg
+    - dconf
+    - systemd
+    - polkit-qt-1
+    - wayland-client
+    - wayland-server
+    - pixman-1
+    - weston
+    - xkbcommon
+    - alsa
+
+PkgBR:
+    - qtaccountsservice-devel
+    - qtconfiguration-devel
+    - cmake
+    - qt5-default
+    - bzip2-devel
+    - greenisland-devel
+
+Requires:
+    - qt5-qtdeclarative-import-window2
+    - qt5-qtsvg-plugin-imageformat-svg
+    - qt5-qttools-qdbus
+    - wallpapers
+    - fluid
+
+Files:  
+    - "%{_bindir}/hawaii"
+    - "%{_bindir}/hawaii-shell"
+    - "%{_libdir}/hawaii/plugins/platformthemes/hawaii.so"
+    - "%{_libdir}/hawaii/qml/Hawaii/Shell/"
+    - "%{_libdir}/weston/hawaii-desktop.so"
+    - "%{_libdir}/libHF1HawaiiShell.so.*"
+    - "%{_libdir}/weston/hawaii-desktop.so"
+    - "%{_libexecdir}/starthawaii"
+    - "%{_libexecdir}/hawaii-shell-client"
+    - "%{_libexecdir}/hawaii-screensaver"
+    - "%{_libexecdir}/hawaii-notifications-daemon"
+    - "%{_datadir}/hawaii/"
+
+SubPackages:
+    - Name: devel
+      Summary: Devel files for Hawaii
+      Group: Development/System
+      Description: "%{summary}."
+      Files:
+         - "%{_includedir}/HF1/HawaiiShell/"
+         - "%{_libdir}/cmake/HF1HawaiiShell/*.cmake"
+         - "%{_libdir}/libHF1HawaiiShell.so"
