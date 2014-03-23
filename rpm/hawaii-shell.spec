@@ -101,18 +101,18 @@ cd upstream
 
 %files
 %defattr(-,root,root,-)
+%{_sysconfdir}/systemd/user/
 %{_bindir}/hawaii
 %{_bindir}/hawaii-shell
 %{_bindir}/hawaii-polkit-agent
+%{_bindir}/hawaii-notifications-daemon
 %{_libdir}/hawaii/plugins/platformthemes/hawaii.so
 %{_libdir}/hawaii/qml/Hawaii/Shell/
 %{_libdir}/weston/hawaii-desktop.so
 %{_libdir}/libHF1HawaiiShell.so.*
-%{_libdir}/weston/hawaii-desktop.so
 %{_libexecdir}/starthawaii
 %{_libexecdir}/hawaii-shell-client
 %{_libexecdir}/hawaii-screensaver
-%{_libexecdir}/hawaii-notifications-daemon
 %{_datadir}/hawaii/
 # >> files
 # << files
