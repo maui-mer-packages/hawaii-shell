@@ -8,8 +8,6 @@ Description: Provides Hawaii desktop environment shell.
 URL        : https://github.com/mauios/hawaii-shell.git
 Sources    : 
     - hawaii-shell-%{version}.tar.bz2
-#Patches:
-#    - Remove-C++11-override.patch
 
 Configure  : cmake 
 ConfigOptions: 
