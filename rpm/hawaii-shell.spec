@@ -77,8 +77,9 @@ cd upstream
 # << build pre
 
 %cmake .  \
+    -DCMAKE_INSTALL_SYSCONFDIR="%{_sysconfdir}" \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-    -DQTWAYLAND_SCANNER_EXECUTABLE=/usr/lib/qt5/bin/qtwaylandscanner
+    -DQTWAYLAND_SCANNER_EXECUTABLE="%{_libdir}/qt5/bin/qtwaylandscanner"
 
 make %{?_smp_mflags}
 
