@@ -77,7 +77,8 @@ cd upstream
 # << build pre
 
 %cmake .  \
-    -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+    -DQTWAYLAND_SCANNER_EXECUTABLE=/usr/lib/qt5/bin/qtwaylandscanner
 
 make %{?jobs:-j%jobs}
 
