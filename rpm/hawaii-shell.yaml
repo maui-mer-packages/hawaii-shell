@@ -29,7 +29,7 @@ PkgConfigBR:
     - Qt5Script
     - dconf
     - systemd
-    - polkit-qt-1
+    - polkit-qt5-1
     - wayland-client
     - wayland-server
     - pixman-1
