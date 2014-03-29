@@ -101,6 +101,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
+%doc AUTHORS COPYING COPYING.LIB README.md
 %{_sysconfdir}/systemd/user/
 %{_bindir}/hawaii
 %{_bindir}/hawaii-shell
