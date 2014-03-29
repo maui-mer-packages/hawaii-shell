@@ -64,7 +64,7 @@ that interact with Hawaii Shelll.
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}/upstream
 
 # >> setup
 find upstream/src/server/ -type f -name "*.cpp" | xargs perl -p -i -e 's, override,,g'
@@ -73,7 +73,6 @@ find upstream/src/server/ -type f -name "*.h" | xargs perl -p -i -e 's, override
 
 %build
 # >> build pre
-cd upstream
 # << build pre
 
 %cmake .  \
@@ -89,7 +88,6 @@ make %{?_smp_mflags}
 %install
 rm -rf %{buildroot}
 # >> install pre
-cd upstream
 # << install pre
 %make_install
 

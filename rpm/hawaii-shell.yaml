@@ -8,6 +8,7 @@ Description: Provides Hawaii desktop environment shell.
 URL        : https://github.com/mauios/hawaii-shell.git
 Sources    : 
     - hawaii-shell-%{version}.tar.bz2
+SetupOptions: -q -n %{name}-%{version}/upstream
 
 Configure  : cmake 
 ConfigOptions: 
