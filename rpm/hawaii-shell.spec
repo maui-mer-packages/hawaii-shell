@@ -20,6 +20,7 @@ Requires:   qt5-qtdeclarative-import-window2
 Requires:   qt5-qtsvg-plugin-imageformat-svg
 Requires:   qt5-qttools-qdbus
 Requires:   qt5-qtquickcontrols
+Requires:   hawaii-icon-theme
 Requires:   hawaii-wallpapers
 Requires:   fluid
 Requires(post): /sbin/ldconfig
