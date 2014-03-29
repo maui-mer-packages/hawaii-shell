@@ -12,7 +12,7 @@ Summary:    Hawaii user interface for desktop and mobile
 Version:    0.2.0.1.20140228.51d1271
 Release:    1
 Group:      Applications/System
-License:    BSD
+License:    LGPLv2.1+ and GPLv2+
 URL:        https://github.com/mauios/hawaii-shell.git
 Source0:    hawaii-shell-%{version}.tar.bz2
 Source100:  hawaii-shell.yaml
