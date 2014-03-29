@@ -14,7 +14,7 @@ Release:    1
 Group:      Applications/System
 License:    LGPLv2.1+ and GPLv2+
 URL:        https://github.com/mauios/hawaii-shell.git
-Source0:    hawaii-shell-%{version}.tar.bz2
+Source0:    hawaii-shell-%{version}.tar.xz
 Source100:  hawaii-shell.yaml
 Requires:   qt5-qtdeclarative-import-window2
 Requires:   qt5-qtsvg-plugin-imageformat-svg
