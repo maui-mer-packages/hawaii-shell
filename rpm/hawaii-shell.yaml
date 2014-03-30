@@ -1,5 +1,5 @@
 Name       : hawaii-shell
-Version    : 0.2.0.1.20140329.599ec8b
+Version    : 0.2.90
 Release    : 1
 Group      : Applications/System
 License    : LGPLv2.1+ and GPLv2+
@@ -44,6 +44,7 @@ PkgBR:
     - qt5-default
     - bzip2-devel
     - greenisland-devel
+    - libhawaiishell-devel
 
 Requires:
     - qt5-qtdeclarative-import-window2
@@ -53,6 +54,8 @@ Requires:
     - hawaii-icon-theme
     - hawaii-wallpapers
     - fluid
+    - libhawaii-import-core
+    - libhawaii-import-applications
 
 Files:
     - "%doc AUTHORS COPYING COPYING.LIB README.md"
@@ -69,15 +72,3 @@ Files:
     - "%{_libexecdir}/hawaii-shell-client"
     - "%{_libexecdir}/hawaii-screensaver"
     - "%{_datadir}/hawaii/"
-
-SubPackages:
-    - Name: devel
-      Summary: Development files for Hawaii
-      Group: Development/System
-      Description: |
-        This package contains the files necessary to develop applications |
-        that interact with Hawaii Shelll.
-      Files:
-         - "%{_includedir}/HF1/HawaiiShell/"
-         - "%{_libdir}/cmake/HF1HawaiiShell/*.cmake"
-         - "%{_libdir}/libHF1HawaiiShell.so"

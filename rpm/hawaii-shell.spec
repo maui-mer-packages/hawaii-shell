@@ -9,7 +9,7 @@ Name:       hawaii-shell
 # << macros
 
 Summary:    Hawaii user interface for desktop and mobile
-Version:    0.2.0.1.20140329.599ec8b
+Version:    0.2.90
 Release:    1
 Group:      Applications/System
 License:    LGPLv2.1+ and GPLv2+
@@ -23,6 +23,8 @@ Requires:   qt5-qtquickcontrols
 Requires:   hawaii-icon-theme
 Requires:   hawaii-wallpapers
 Requires:   fluid
+Requires:   libhawaii-import-core
+Requires:   libhawaii-import-applications
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(Qt5Compositor)
@@ -50,19 +52,10 @@ BuildRequires:  cmake
 BuildRequires:  qt5-default
 BuildRequires:  bzip2-devel
 BuildRequires:  greenisland-devel
+BuildRequires:  libhawaiishell-devel
 
 %description
 Provides Hawaii desktop environment shell.
-
-%package devel
-Summary:    Development files for Hawaii
-Group:      Development/System
-Requires:   %{name} = %{version}-%{release}
-
-%description devel
-This package contains the files necessary to develop applications |
-that interact with Hawaii Shelll.
-
 
 %prep
 %setup -q -n %{name}-%{version}/upstream
@@ -117,11 +110,3 @@ rm -rf %{buildroot}
 %{_datadir}/hawaii/
 # >> files
 # << files
-
-%files devel
-%defattr(-,root,root,-)
-%{_includedir}/HF1/HawaiiShell/
-%{_libdir}/cmake/HF1HawaiiShell/*.cmake
-%{_libdir}/libHF1HawaiiShell.so
-# >> files devel
-# << files devel
