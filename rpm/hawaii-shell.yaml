@@ -50,6 +50,7 @@ Requires:
     - qt5-qtsvg-plugin-imageformat-svg
     - qt5-qttools-qdbus
     - qt5-qtquickcontrols
+    - weston
     - greenisland
     - qtconfiguration
     - hawaii-icon-theme
