@@ -20,6 +20,9 @@ Requires:   qt5-qtdeclarative-import-window2
 Requires:   qt5-qtsvg-plugin-imageformat-svg
 Requires:   qt5-qttools-qdbus
 Requires:   qt5-qtquickcontrols
+Requires:   dconf
+Requires:   greenisland
+Requires:   qtconfiguration
 Requires:   hawaii-icon-theme
 Requires:   hawaii-wallpapers
 Requires:   fluid
@@ -37,7 +40,6 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Script)
-BuildRequires:  pkgconfig(dconf)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  pkgconfig(polkit-qt5-1)
 BuildRequires:  pkgconfig(wayland-client)
