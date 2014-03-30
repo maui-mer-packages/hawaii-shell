@@ -27,8 +27,6 @@ Requires:   hawaii-wallpapers
 Requires:   fluid
 Requires:   libhawaii-import-core
 Requires:   libhawaii-import-applications
-Requires(post): /sbin/ldconfig
-Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(Qt5Compositor)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(liblzma)
@@ -89,10 +87,6 @@ rm -rf %{buildroot}
 # >> install post
 # << install post
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
-
 %files
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYING.LIB README.md
@@ -104,7 +98,6 @@ rm -rf %{buildroot}
 %{_libdir}/hawaii/plugins/platformthemes/hawaii.so
 %{_libdir}/hawaii/qml/Hawaii/Shell/
 %{_libdir}/weston/hawaii-desktop.so
-%{_libdir}/libHF1HawaiiShell.so.*
 %{_libexecdir}/starthawaii
 %{_libexecdir}/hawaii-shell-client
 %{_libexecdir}/hawaii-screensaver
