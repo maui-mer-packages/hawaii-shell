@@ -98,6 +98,7 @@ rm -rf %{buildroot}
 %{_bindir}/hawaii-polkit-agent
 %{_bindir}/hawaii-notifications-daemon
 %{_libdir}/hawaii/plugins/platformthemes/hawaii.so
+%{_libdir}/hawaii/plugins/dataproviders/*.so
 %{_libdir}/hawaii/qml/Hawaii/Shell/
 %{_libdir}/weston/hawaii-desktop.so
 %{_libexecdir}/starthawaii
