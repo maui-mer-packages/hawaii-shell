@@ -51,6 +51,7 @@ Requires:
     - qt5-qttools-qdbus
     - qt5-qtquickcontrols
     - qt5-qtgraphicaleffects
+    - dbus-x11
     - weston
     - greenisland
     - qtconfiguration
