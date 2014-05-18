@@ -22,6 +22,7 @@ Requires:   qt5-qttools-qdbus
 Requires:   qt5-qtquickcontrols
 Requires:   qt5-qtgraphicaleffects
 Requires:   dbus-x11
+Requires:   accountsservice
 Requires:   weston
 Requires:   greenisland
 Requires:   qtconfiguration

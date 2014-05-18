@@ -52,6 +52,7 @@ Requires:
     - qt5-qtquickcontrols
     - qt5-qtgraphicaleffects
     - dbus-x11
+    - accountsservice
     - weston
     - greenisland
     - qtconfiguration
