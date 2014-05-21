@@ -95,17 +95,13 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYING.LIB README.md
 %{_sysconfdir}/systemd/user/
-%{_bindir}/hawaii
-%{_bindir}/hawaii-shell
-%{_bindir}/hawaii-polkit-agent
-%{_bindir}/hawaii-notifications-daemon
+%{_bindir}/hawaii*
 %{_libdir}/hawaii/plugins/platformthemes/hawaii.so
 %{_libdir}/hawaii/plugins/dataproviders/*.so
 %{_libdir}/hawaii/qml/Hawaii/Shell/
 %{_libdir}/weston/hawaii-desktop.so
 %{_libexecdir}/starthawaii
-%{_libexecdir}/hawaii-shell-client
-%{_libexecdir}/hawaii-screensaver
+%{_libexecdir}/hawaii*
 %{_datadir}/hawaii/
 # >> files
 # << files
