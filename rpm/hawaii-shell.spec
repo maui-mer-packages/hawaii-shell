@@ -94,8 +94,8 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYING.LIB README.md
-%{_sysconfdir}/systemd/user/
 %{_bindir}/hawaii*
+%{_libdir}/systemd/user/
 %{_libdir}/hawaii/plugins/platformthemes/hawaii.so
 %{_libdir}/hawaii/plugins/dataproviders/*.so
 %{_libdir}/hawaii/qml/Hawaii/Shell/
@@ -103,5 +103,6 @@ rm -rf %{buildroot}
 %{_libexecdir}/starthawaii
 %{_libexecdir}/hawaii*
 %{_datadir}/hawaii/
+%{_datadir}/wayland-sessions/hawaii.desktop
 # >> files
 # << files
