@@ -1,76 +1,79 @@
 Name       : hawaii-shell
-Version    : 0.2.90
+Version    : 0.2.99
 Release    : 1
-Group      : Applications/System
+Group      : System/GUI/Other
 License    : LGPLv2.1+ and GPLv2+
 Summary    : Hawaii user interface for desktop and mobile
-Description: Provides Hawaii desktop environment shell.
+Description: |
+  Provides Hawaii desktop environment shell.
 URL        : https://github.com/mauios/hawaii-shell.git
 Sources    : 
-    - hawaii-shell-%{version}.tar.xz
+    - "%{name}-%{version}.tar.xz"
 SetupOptions: -q -n %{name}-%{version}/upstream
 
-Configure  : cmake 
-ConfigOptions: 
-    - -DCMAKE_INSTALL_SYSCONFDIR="%{_sysconfdir}"
-    - -DCMAKE_BUILD_TYPE=RelWithDebInfo 
-    - -DQTWAYLAND_SCANNER_EXECUTABLE="%{_libdir}/qt5/bin/qtwaylandscanner"
-
-PkgConfigBR:
-    - Qt5Compositor
-    - Qt5Widgets
-    - liblzma
-    - Qt5Core
-    - Qt5DBus
-    - Qt5Network
-    - Qt5Qml
-    - Qt5Gui
-    - Qt5Quick
-    - Qt5Script
-    - systemd
-    - polkit-qt5-1
-    - wayland-client
-    - wayland-server
-    - pixman-1
-    - weston
-    - xkbcommon
-    - alsa
+Configure: none
+Builder: none
+NoFiles: True
 
 PkgBR:
-    - qtaccountsservice-devel
-    - qtconfiguration-devel
-    - cmake
-    - qt5-default
-    - bzip2-devel
-    - greenisland-devel
-    - libhawaiishell-devel
+    - kf5-rpm-macros
+    - kde5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - kf5-plasma-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Qml
+    - Qt5Quick
+    - Qt5Widgets
+    - Qt5Test
+    - systemd
 
-Requires:
-    - qt5-qtdeclarative-import-window2
-    - qt5-qtsvg-plugin-imageformat-svg
-    - qt5-qttools-qdbus
-    - qt5-qtquickcontrols
-    - qt5-qtgraphicaleffects
-    - dbus-x11
-    - accountsservice
-    - weston
-    - greenisland
-    - qtconfiguration
-    - hawaii-icon-theme
-    - hawaii-wallpapers
-    - fluid
-    - libhawaii-import-core
-    - libhawaii-import-applications
-
-Files:
-    - "%doc AUTHORS COPYING COPYING.LIB README.md"
-    - "%{_bindir}/hawaii*"
-    - "%{_libdir}/systemd/user/"
-    - "%{_libdir}/hawaii/plugins/platformthemes/hawaii.so"
-    - "%{_libdir}/hawaii/plugins/dataproviders/*.so"
-    - "%{_libdir}/hawaii/qml/Hawaii/Shell/"
-    - "%{_libdir}/weston/hawaii-desktop.so"
-    - "%{_libexecdir}/starthawaii"
-    - "%{_libexecdir}/hawaii*"
-    - "%{_datadir}/hawaii/"
-    - "%{_datadir}/wayland-sessions/hawaii.desktop"
+SubPackages:
+    - Name: hawaii-desktop-session
+      AsWholeName: True
+      Summary: Hawaii desktop session
+      Group: System/GUI/Other
+      BuildArch: noarch
+      Description: |
+        This package contains the files that bring up the Hawaii |
+        desktop shell.
+      Conflicts:
+          - kde5-plasma-workspace-shell
+      Requires:
+          - hawaii-desktop-shell
+      Files:
+         - "%{_datadir}/xsessions/hawaii.desktop"
+         - "%{_datadir}/wayland-sessions/hawaii.desktop"
+         - "%{_kde5_sysconfdir}/xdg/autostart/hawaii-shell-desktop.desktop"
+         - "%{_libdir}/systemd/user/*"
+    - Name: hawaii-desktop-shell
+      AsWholeName: True
+      Summary: Hawaii desktop shell
+      Group: System/GUI/Other
+      BuildArch: noarch
+      Description: |
+        This package contains the files necessary to run the |
+        Hawaii desktop shell.
+      Requires:
+          - qt5-qtdeclarative-import-window2
+          - qt5-qtsvg-plugin-imageformat-svg
+          - qt5-qttools-qdbus
+          - qt5-qtquickcontrols
+          - qt5-qtgraphicaleffects
+          - dbus-x11
+          - accountsservice
+          - sddm
+          - kde5-plasma-desktop
+          - kde5-plasma-workspace
+          - kde5-plasma-workspace-plasmoids
+          - kde5-plasma-workspace-wallpapers
+      Files:
+         - "%doc AUTHORS COPYING COPYING.LIB README.md"
+         - "%{_kde5_datadir}/plasma/look-and-feel/org.hawaii.lookandfeel.desktop/*"
+         - "%{_kde5_datadir}/plasma/shells/org.hawaii.shells.desktop/*"
+         - "%{_datadir}/sddm/themes/mauiproject/*"
