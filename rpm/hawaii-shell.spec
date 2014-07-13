@@ -25,7 +25,6 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Test)
-BuildRequires:  pkgconfig(systemd)
 BuildRequires:  kf5-rpm-macros
 BuildRequires:  kde5-rpm-macros
 BuildRequires:  extra-cmake-modules
@@ -101,7 +100,6 @@ rm -rf %{buildroot}
 %{_datadir}/xsessions/hawaii.desktop
 %{_datadir}/wayland-sessions/hawaii.desktop
 %{_kde5_sysconfdir}/xdg/autostart/hawaii-shell-desktop.desktop
-%{_libdir}/systemd/user/*
 # >> files hawaii-desktop-session
 # << files hawaii-desktop-session
 

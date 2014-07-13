@@ -31,7 +31,6 @@ PkgConfigBR:
     - Qt5Quick
     - Qt5Widgets
     - Qt5Test
-    - systemd
 
 SubPackages:
     - Name: hawaii-desktop-session
@@ -50,7 +49,6 @@ SubPackages:
          - "%{_datadir}/xsessions/hawaii.desktop"
          - "%{_datadir}/wayland-sessions/hawaii.desktop"
          - "%{_kde5_sysconfdir}/xdg/autostart/hawaii-shell-desktop.desktop"
-         - "%{_libdir}/systemd/user/*"
     - Name: hawaii-desktop-shell
       AsWholeName: True
       Summary: Hawaii desktop shell
