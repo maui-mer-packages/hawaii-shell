@@ -108,6 +108,7 @@ rm -rf %{buildroot}
 %doc AUTHORS COPYING COPYING.LIB README.md
 %{_kde5_datadir}/plasma/look-and-feel/org.hawaii.lookandfeel.desktop/*
 %{_kde5_datadir}/plasma/shells/org.hawaii.shells.desktop/*
+%{_kde5_datadir}/kservices5/*
 %{_datadir}/sddm/themes/mauiproject/*
 # >> files hawaii-desktop-shell
 # << files hawaii-desktop-shell
