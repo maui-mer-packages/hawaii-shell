@@ -70,6 +70,7 @@ SubPackages:
           - kde5-plasma-workspace
           - kde5-plasma-workspace-plasmoids
           - kde5-plasma-workspace-wallpapers
+          - raleway-fonts
       Files:
          - "%doc AUTHORS COPYING COPYING.LIB README.md"
          - "%{_kde5_datadir}/plasma/look-and-feel/org.hawaii.lookandfeel.desktop/*"
