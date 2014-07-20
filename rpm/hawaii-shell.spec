@@ -63,6 +63,7 @@ Requires:   kde5-plasma-desktop
 Requires:   kde5-plasma-workspace
 Requires:   kde5-plasma-workspace-plasmoids
 Requires:   kde5-plasma-workspace-wallpapers
+Requires:   kde5-milou
 Requires:   raleway-fonts
 
 %description -n hawaii-desktop-shell
