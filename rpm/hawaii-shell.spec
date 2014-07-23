@@ -108,6 +108,7 @@ rm -rf %{buildroot}
 %files -n hawaii-desktop-shell
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYING.LIB README.md
+%{_kde5_sysconfdir}/xdg/plasma-workspace/env/*.sh
 %{_kde5_datadir}/plasma/look-and-feel/org.hawaii.lookandfeel.desktop/*
 %{_kde5_datadir}/plasma/shells/org.hawaii.shells.desktop/*
 %{_kde5_datadir}/kservices5/*
