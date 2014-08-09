@@ -21,6 +21,7 @@ PkgBR:
     - extra-cmake-modules
     - qt5-tools
     - kf5-plasma-devel
+    - hawaii-framework-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
@@ -71,7 +72,7 @@ SubPackages:
           - kde5-plasma-workspace-plasmoids
           - kde5-plasma-workspace-wallpapers
           - kde5-milou
-          - raleway-fonts
+          - hawaii-framework
       Files:
          - "%doc AUTHORS COPYING COPYING.LIB README.md"
          - "%{_kde5_sysconfdir}/xdg/plasma-workspace/env/*.sh"
