@@ -26,10 +26,9 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  kf5-rpm-macros
-BuildRequires:  kde5-rpm-macros
 BuildRequires:  extra-cmake-modules
 BuildRequires:  qt5-tools
-BuildRequires:  kf5-plasma-devel
+BuildRequires:  plasma-devel
 
 %description
 Provides Hawaii desktop environment shell.
@@ -40,7 +39,7 @@ Summary:    Hawaii desktop session
 Group:      System/GUI/Other
 BuildArch:  noarch
 Requires:   hawaii-desktop-shell
-Conflicts:  kde5-plasma-workspace-shell
+Conflicts:  plasma-workspace-shell
 
 %description -n hawaii-desktop-session
 This package contains the files that bring up the Hawaii |
@@ -59,11 +58,11 @@ Requires:   qt5-qtgraphicaleffects
 Requires:   dbus-x11
 Requires:   accountsservice
 Requires:   sddm
-Requires:   kde5-plasma-desktop
-Requires:   kde5-plasma-workspace
-Requires:   kde5-plasma-workspace-plasmoids
-Requires:   kde5-plasma-workspace-wallpapers
-Requires:   kde5-milou
+Requires:   plasma-desktop
+Requires:   plasma-workspace
+Requires:   plasma-workspace-plasmoids
+Requires:   plasma-workspace-wallpapers
+Requires:   milou
 Requires:   hawaii-framework
 
 %description -n hawaii-desktop-shell
@@ -79,7 +78,7 @@ Hawaii desktop shell.
 
 %build
 # >> build pre
-%kde5_make
+%kf5_make
 # << build pre
 
 
@@ -90,7 +89,7 @@ Hawaii desktop shell.
 %install
 rm -rf %{buildroot}
 # >> install pre
-%kde5_make_install
+%kf5_make_install
 # << install pre
 
 # >> install post
@@ -101,17 +100,17 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_datadir}/xsessions/hawaii.desktop
 %{_datadir}/wayland-sessions/hawaii.desktop
-%{_kde5_sysconfdir}/xdg/autostart/hawaii-shell-desktop.desktop
+%{_kf5_configdir}/autostart/hawaii-shell-desktop.desktop
 # >> files hawaii-desktop-session
 # << files hawaii-desktop-session
 
 %files -n hawaii-desktop-shell
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYING.LIB README.md
-%{_kde5_sysconfdir}/xdg/plasma-workspace/env/*.sh
-%{_kde5_datadir}/plasma/look-and-feel/org.hawaii.lookandfeel.desktop/*
-%{_kde5_datadir}/plasma/shells/org.hawaii.shells.desktop/*
-%{_kde5_datadir}/kservices5/*
+%{_kf5_configdir}/plasma-workspace/env/*.sh
+%{_kf5_sharedir}/plasma/look-and-feel/org.hawaii.lookandfeel.desktop/*
+%{_kf5_sharedir}/plasma/shells/org.hawaii.shells.desktop/*
+%{_kf5_servicesdir}/*
 %{_datadir}/sddm/themes/mauiproject/*
 # >> files hawaii-desktop-shell
 # << files hawaii-desktop-shell
