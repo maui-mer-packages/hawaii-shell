@@ -61,6 +61,8 @@ Requires:   sddm
 Requires:   plasma-desktop
 Requires:   plasma-workspace
 Requires:   plasma-workspace-plasmoids
+Requires:   plasma-workspace-wallpaper-image
+Requires:   plasma-workspace-wallpaper-slideshow
 Requires:   milou
 Requires:   hawaii-framework
 

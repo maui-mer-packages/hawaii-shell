@@ -68,6 +68,8 @@ SubPackages:
           - plasma-desktop
           - plasma-workspace
           - plasma-workspace-plasmoids
+          - plasma-workspace-wallpaper-image
+          - plasma-workspace-wallpaper-slideshow
           - milou
           - hawaii-framework
       Files:
