@@ -61,7 +61,6 @@ Requires:   sddm
 Requires:   plasma-desktop
 Requires:   plasma-workspace
 Requires:   plasma-workspace-plasmoids
-Requires:   plasma-workspace-wallpapers
 Requires:   milou
 Requires:   hawaii-framework
 
@@ -108,8 +107,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYING.LIB README.md
 %{_kf5_configdir}/plasma-workspace/env/*.sh
-%{_kf5_sharedir}/plasma/look-and-feel/org.hawaii.lookandfeel.desktop/*
-%{_kf5_sharedir}/plasma/shells/org.hawaii.shells.desktop/*
+%{_kf5_sharedir}/*
 %{_kf5_servicesdir}/*
 %{_datadir}/sddm/themes/mauiproject/*
 # >> files hawaii-desktop-shell

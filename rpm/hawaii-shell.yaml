@@ -68,13 +68,11 @@ SubPackages:
           - plasma-desktop
           - plasma-workspace
           - plasma-workspace-plasmoids
-          - plasma-workspace-wallpapers
           - milou
           - hawaii-framework
       Files:
          - "%doc AUTHORS COPYING COPYING.LIB README.md"
          - "%{_kf5_configdir}/plasma-workspace/env/*.sh"
-         - "%{_kf5_sharedir}/plasma/look-and-feel/org.hawaii.lookandfeel.desktop/*"
-         - "%{_kf5_sharedir}/plasma/shells/org.hawaii.shells.desktop/*"
+         - "%{_kf5_sharedir}/*"
          - "%{_kf5_servicesdir}/*"
          - "%{_datadir}/sddm/themes/mauiproject/*"
