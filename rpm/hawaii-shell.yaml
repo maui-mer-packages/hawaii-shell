@@ -20,6 +20,12 @@ PkgBR:
     - extra-cmake-modules
     - qt5-tools
     - plasma-devel
+    - solid-devel
+    - krunner-devel
+    - kservice-devel
+    - kdelibs4support-devel
+    - ki18n-devel
+    - plasma-workspace-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
