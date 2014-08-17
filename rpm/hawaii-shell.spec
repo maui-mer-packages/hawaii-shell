@@ -29,6 +29,12 @@ BuildRequires:  kf5-rpm-macros
 BuildRequires:  extra-cmake-modules
 BuildRequires:  qt5-tools
 BuildRequires:  plasma-devel
+BuildRequires:  solid-devel
+BuildRequires:  krunner-devel
+BuildRequires:  kservice-devel
+BuildRequires:  kdelibs4support-devel
+BuildRequires:  ki18n-devel
+BuildRequires:  plasma-workspace-devel
 
 %description
 Provides Hawaii desktop environment shell.
