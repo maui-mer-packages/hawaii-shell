@@ -59,7 +59,6 @@ SubPackages:
       AsWholeName: True
       Summary: Hawaii desktop shell
       Group: System/GUI/Other
-      BuildArch: noarch
       Description: |
         This package contains the files necessary to run the |
         Hawaii desktop shell.
@@ -84,4 +83,5 @@ SubPackages:
          - "%{_kf5_configdir}/plasma-workspace/env/*.sh"
          - "%{_kf5_sharedir}/*"
          - "%{_kf5_servicesdir}/*"
+         - "%{_kf5_qmldir}/*"
          - "%{_datadir}/sddm/themes/mauiproject/*"

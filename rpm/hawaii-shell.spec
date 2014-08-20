@@ -56,7 +56,6 @@ desktop shell.
 %package -n hawaii-desktop-shell
 Summary:    Hawaii desktop shell
 Group:      System/GUI/Other
-BuildArch:  noarch
 Requires:   qt5-qtdeclarative-import-window2
 Requires:   qt5-qtsvg-plugin-imageformat-svg
 Requires:   qt5-qttools-qdbus
@@ -118,6 +117,7 @@ rm -rf %{buildroot}
 %{_kf5_configdir}/plasma-workspace/env/*.sh
 %{_kf5_sharedir}/*
 %{_kf5_servicesdir}/*
+%{_kf5_qmldir}/*
 %{_datadir}/sddm/themes/mauiproject/*
 # >> files hawaii-desktop-shell
 # << files hawaii-desktop-shell
