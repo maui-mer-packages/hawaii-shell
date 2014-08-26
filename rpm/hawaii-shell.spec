@@ -115,6 +115,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYING.LIB README.md
 %{_kf5_configdir}/plasma-workspace/env/*.sh
+%{_kf5_configdir}/menus/hawaii-applications.menu
 %{_kf5_sharedir}/*
 %{_kf5_servicesdir}/*
 %{_kf5_qmldir}/*
