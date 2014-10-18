@@ -9,7 +9,7 @@ Name:       hawaii-shell
 # << macros
 
 Summary:    Hawaii user interface for desktop and mobile
-Version:    0.4.0
+Version:    0.5.90+git0
 Release:    1
 Group:      System/GUI/Other
 License:    LGPLv2.1+ and GPLv2+
